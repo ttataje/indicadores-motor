@@ -1,7 +1,10 @@
 package pe.gob.regionica.indicadores.motor.rest;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 
+import org.apache.commons.io.FileUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.slf4j.Logger;
@@ -28,6 +31,20 @@ public class MotorRest {
 	@ResponseBody
 	@RequestMapping(value = "/generate", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
 	public byte[] generate(String json) throws IOException, JSONException  {
+		log.debug("json : " + json);
+	    return motorCore.process(new JSONObject(json));
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
+	public byte[] test() throws IOException, JSONException  {
+		File file = null;
+		try {
+			file = new File(this.getClass().getClassLoader().getResource("dummy.json").getFile());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		String json = FileUtils.readFileToString(file, Charset.defaultCharset());
 		log.debug("json : " + json);
 	    return motorCore.process(new JSONObject(json));
 	}

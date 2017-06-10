@@ -1,0 +1,60 @@
+{
+	"title" : "G26. ICA: EXPORTACIONES DE HARINA DE PESCADO POR EMPRESA EXPORTADORA 2010-2016 (t)",
+	"legend" : true,
+	"tooltips" : true,
+	"urls" : true,
+	"width" : 640,
+	"height" : 480,
+	"orientation" : "vertical",
+	"type" : "stackedBar",
+	"labelX" : "",
+	"labelY" : "",
+	"series" : ["2010","2011","2012","2013"],
+	"data" : [
+		{
+			"key" : "CFG INVESTMENT",
+			"values" : [20000,45000,34000,24000],
+			"color" : "#000011"
+		},
+		{
+			"key" : "PESQUERA DIAMANTE",
+			"values" : [40000,75000,45000,32000],
+			"color" : "#001100"
+		},
+		{
+			"key" : "AUSTRAL GROUP",
+			"values" : [60000,105000,95000,60000],
+			"color" : "#110000"
+		},
+		{
+			"key" : "PESQUERA EXALMAR",
+			"values" : [95000,130000,11000,75000],
+			"color" : "#000022"
+		},
+		{
+			"key" : "PESQUERA HAYDUK",
+			"values" : [98000,160000,120000,89000],
+			"color" : "#002200"
+		},
+		{
+			"key" : "PESQUERA CENTINELA",
+			"values" : [120000,175000,130000,95000],
+			"color" : "#220000"
+		},
+		{
+			"key" : "COPEINCA",
+			"values" : [127000,170000,130000,95000],
+			"color" : "#000033"
+		},
+		{
+			"key" : "TECNOLOGICA DE ALIMENTOS",
+			"values" : [132000,200000,138000,95000],
+			"color" : "#003300"
+		},
+		{
+			"key" : "OTROS",
+			"values" : [140000,230000,145000,100000],
+			"color" : "#330000"
+		}
+	]
+}
