@@ -29,7 +29,7 @@ public class MotorRest {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/generate", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
+	@RequestMapping(value = "/generate", method = RequestMethod.POST, produces = MediaType.IMAGE_PNG_VALUE)
 	public byte[] generate(String json) throws IOException, JSONException  {
 		log.debug("json : " + json);
 		JSONObject jsonObject = null;

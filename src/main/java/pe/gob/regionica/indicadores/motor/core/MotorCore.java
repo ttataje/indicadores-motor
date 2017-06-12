@@ -15,7 +15,6 @@ import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.axis.CategoryLabelPositions;
 import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.axis.ValueAxis;
-import org.jfree.chart.labels.StandardCategoryToolTipGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.DatasetRenderingOrder;
 import org.jfree.chart.plot.PlotOrientation;
@@ -212,11 +211,13 @@ public class MotorCore implements Serializable {
 					
 					final CategoryAxis domainAxis = plot.getDomainAxis();
 					domainAxis.setCategoryLabelPositions(CategoryLabelPositions.DOWN_45);
-					final ValueAxis axis2 = new NumberAxis("Secondary");
-					plot.setRangeAxis(i, axis2);
+					if(i == 1){
+						JSONObject jsonObject = jsonArray2.getJSONObject(0);
+						final ValueAxis axis2 = new NumberAxis(jsonObject.getString(MotorConstants.key));
+						plot.setRangeAxis(i, axis2);
+					}
 					
 					final LineAndShapeRenderer renderer2 = new LineAndShapeRenderer();
-					renderer2.setToolTipGenerator(new StandardCategoryToolTipGenerator());
 					plot.setRenderer(i, renderer2);
 					plot.setDatasetRenderingOrder(DatasetRenderingOrder.REVERSE);
 				}
