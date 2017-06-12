@@ -32,7 +32,15 @@ public class MotorRest {
 	@RequestMapping(value = "/generate", method = RequestMethod.GET, produces = MediaType.IMAGE_PNG_VALUE)
 	public byte[] generate(String json) throws IOException, JSONException  {
 		log.debug("json : " + json);
-	    return motorCore.process(new JSONObject(json));
+		JSONObject jsonObject = null;
+		try{
+			jsonObject = new JSONObject(json);
+		}catch(Exception e){
+			log.error("[MotorRest] Can't parse json input");
+		}
+		
+		if(jsonObject == null) jsonObject = new JSONObject();
+	    return motorCore.process(jsonObject);
 	}
 	
 	@ResponseBody

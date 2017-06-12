@@ -3,7 +3,6 @@ package pe.gob.regionica.indicadores.motor.utils;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -32,10 +31,10 @@ public class MotorUtils {
 				JSONObject item = data.getJSONObject(i);
 				JSONArray values = item.getJSONArray(MotorConstants.values);
 				if(MotorConstants.type_graph.pie.equalsIgnoreCase(type)){
-					//dataset.addValue(20.3, "Product 1 (US)", "Jan 04");
+					((DefaultPieDataset)dataset).setValue(item.getString(MotorConstants.key), values.getDouble(0));
 				}else{
 					for(int j = 0; j < values.length(); j++){
-						((DefaultCategoryDataset)dataset).addValue(values.getDouble(j), item.getString(MotorConstants.key), series[j]);
+						((DefaultCategoryDataset)dataset).addValue(values.getDouble(j), item.getString(MotorConstants.key), series.length > 0 ? series[j] : null);
 					}
 				}
 			}

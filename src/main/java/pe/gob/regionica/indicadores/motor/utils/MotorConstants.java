@@ -11,12 +11,14 @@ public class MotorConstants {
 	public static final String type = "type";
 	public static final String series = "series";
 	public static final String labelX = "labelX";
+	public static final String labelX2 = "labelX2";
 	public static final String labelY = "labelY";
 	public static final String orientation = "orientation";
 	public static final String key = "key";
 	public static final String color = "color";
 	public static final String label = "label";
 	public static final String data = "data";
+	public static final String dataAxis = "dataAxis";
 	public static final String value = "value";
 	public static final String values = "values";
 
